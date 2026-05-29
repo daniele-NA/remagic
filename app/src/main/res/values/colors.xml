@@ -1,0 +1,27 @@
+<resources>
+
+    <!--\\\\\\\\\\\\\\ Custom Colors NO VALUES NIGHT \\\\\\\\\\\\\\-->
+
+    <color name="icon_color">#FFFFFF</color>
+    <color name="splash_background">#4A2C74</color>
+
+    <!--\\\\\\\\\\\\\\ Material Theme Colors , NO VALUES NIGHT \\\\\\\\\\\\\\-->
+
+    <!-- PRIMARY -->
+    <color name="md_theme_primary">#7E57C2</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+
+
+    <!-- ERROR -->
+    <color name="md_theme_error">#BA1A1A</color>
+    <color name="md_theme_onError">#FFFFFF</color>
+
+
+    <!-- BACKGROUND / SURFACE -->
+    <color name="md_theme_background">#1A1528</color>
+    <color name="md_theme_onBackground">#E6E0F8</color>
+
+    <color name="md_theme_surface">#FFD54F</color>
+    <color name="md_theme_onSurface">#FFFFFF</color>
+
+</resources>

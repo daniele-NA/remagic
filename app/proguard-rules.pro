@@ -1,0 +1,6 @@
+-keep class com.crescenzi.remagic.MainActivity { *; }
+-keep class com.crescenzi.remagic.external.sensor.SensorCallback { void onEvent(float); }
+-keep class com.crescenzi.remagic.external.sensor.exception.IllegalNativeSensorException { *; }
+-keep class com.crescenzi.remagic.external.firebase.NativeFirebase{ *; }
+-keep class com.google.firebase.** { *; }
+-keep class com.google.android.gms.** { *; }

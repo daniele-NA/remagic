@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.App" parent="android:Theme.Material.Light.NoActionBar" />
+
+
+    <style name="Theme.App.Splash" parent="Theme.SplashScreen">
+        <!-- Colore di sfondo dello splash -->
+        <item name="windowSplashScreenBackground">@color/splash_background</item>
+
+        <!-- Colore del cerchio dietro l'icona -->
+        <item name="windowSplashScreenIconBackgroundColor">@color/splash_background</item>
+
+        <!-- Icona da mostrare al centro -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/magician_stand</item>
+
+        <!-- Tema che prenderà il controllo dopo lo splash -->
+        <item name="postSplashScreenTheme">@style/Theme.App</item>
+    </style>
+</resources>

@@ -1,0 +1,29 @@
+<resources>
+
+
+
+    <string name="menu_btn">Inizia</string>
+
+    <string name="idle_title">Pronto?</string>
+    <string name="idle_subtitle">Muovi il telefono lateralmente per muovere Remagic</string>
+
+    <string name="over_title">Game Over!</string>
+    <string name="over_subtitle">Il tuo punteggio: %d</string>
+
+    <!-- ==== Used with RichText ==== -->
+    <string name="game_score">Punteggio:</string>
+
+    <string name="audio_error">Audio disabilitato</string>
+
+
+    <string name="login_title">Accedi</string>
+    <string name="register_title">Registrazione</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="enter_button">Accedi</string>
+    <string name="create_button">Crea account</string>
+    <string name="switch_to_register">Crea un nuovo account</string>
+    <string name="switch_to_login">Hai già un account? Accedi</string>
+    <string name="auth_beta_notice">Beta: eventuali errori di autenticazione non vengono mostrati</string>
+
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="h1">70sp</dimen>
+    <dimen name="h2">26sp</dimen>
+
+    <dimen name="menu_base_horizontal_padding">30dp</dimen>
+    <dimen name="menu_base_vertical_padding">30dp</dimen>
+    <dimen name="menu_row_horizontal_padding">80dp</dimen>
+    <dimen name="menu_row_vertical_padding">20dp</dimen>
+    <dimen name="menu_btn_bottom_padding">10dp</dimen>
+    <dimen name="menu_btn_text_size">30sp</dimen>
+</resources>

@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name" translatable="false">Remagic</string>
+
+    <string name="notification_channel_id" translatable="false">player_channel</string>
+    <string name="notification_channel_name" translatable="false">Player</string>
+    <string name="notification_channel_description" translatable="false">Player Games</string>
+    <string name="winner_notification_title" translatable="false">MASTER !</string>
+
+    <string name="menu_btn">Start</string>
+
+    <string name="idle_title">Ready?</string>
+    <string name="idle_subtitle">Move your phone sideways to move Remagic</string>
+
+    <string name="over_title">Game Over!</string>
+    <string name="over_subtitle">Your Score: %d</string>
+
+    <!-- ==== Used with RichText ==== -->
+    <string name="game_score">Score:</string>
+
+    <string name="audio_error">Audio disabled</string>
+
+
+
+
+    <string name="login_title">LOGIN</string>
+    <string name="register_title">REGISTRATION</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Password</string>
+    <string name="enter_button">LOGIN</string>
+    <string name="create_button">CREATE ACCOUNT</string>
+    <string name="switch_to_register">Create a new account</string>
+    <string name="switch_to_login">Already registered? Login</string>
+    <string name="auth_beta_notice">Beta: authentication errors are not shown</string>
+</resources>

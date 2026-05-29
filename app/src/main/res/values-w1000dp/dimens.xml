@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="h1">100sp</dimen>
+    <dimen name="h2">36sp</dimen>
+
+    <dimen name="menu_base_horizontal_padding">50dp</dimen>
+    <dimen name="menu_base_vertical_padding">50dp</dimen>
+    <dimen name="menu_row_horizontal_padding">120dp</dimen>
+    <dimen name="menu_row_vertical_padding">40dp</dimen>
+    <dimen name="menu_btn_bottom_padding">20dp</dimen>
+    <dimen name="menu_btn_text_size">50sp</dimen>
+</resources>
