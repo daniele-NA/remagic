@@ -19,7 +19,8 @@
 
 <img src="ASSETS/thumbnail.png" alt="Rebound Magic Thumbnail" width="1920"/>
 
-![Demo](ASSETS/demo.gif)
+
+https://github.com/user-attachments/assets/d5be789d-4b3a-42d8-bc40-666be6d341ab
 
 ---
 
