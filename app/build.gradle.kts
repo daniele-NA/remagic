@@ -32,16 +32,16 @@ if (cppDir.exists() && cppDir.isDirectory) {
 
 android {
     namespace = "com.crescenzi.remagic"
-    compileSdk = 36
+    compileSdk = 37
 
     ndkVersion = "29.0.13846066"  // 16 KB alignment required
 
     defaultConfig {
         applicationId = "com.crescenzi.remagic"
         minSdk = 29
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
-        versionName = "1.0"
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
