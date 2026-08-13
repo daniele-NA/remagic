@@ -20,7 +20,7 @@
 <img src="ASSETS/thumbnail.png" alt="Rebound Magic Thumbnail" width="1920"/>
 
 
-[![Rebound Magic preview](ASSETS/preview.gif)](https://github.com/d-crescenzi/remagic/releases/download/1.0.0/preview.mp4)
+https://github.com/d-crescenzi/remagic/releases/download/1.0.0/preview.mp4
 
 ---
 
