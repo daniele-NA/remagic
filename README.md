@@ -20,7 +20,7 @@
 <img src="ASSETS/thumbnail.png" alt="Rebound Magic Thumbnail" width="1920"/>
 
 
-https://github.com/user-attachments/assets/d5be789d-4b3a-42d8-bc40-666be6d341ab
+https://github.com/user-attachments/assets/159fe36f-9531-4904-9adb-0b08caad8585
 
 ---
 
