@@ -12,20 +12,22 @@ plugins {
     kotlin("plugin.serialization") version "2.1.10"
 }
 
-// INCLUDING FIREBASE SDK CPP //
-val cppDir = file(providers.gradleProperty("firebase_cpp_sdk_dir").get())
-if (cppDir.exists() && cppDir.isDirectory) {
-    apply(from = "${cppDir.path}/Android/firebase_dependencies.gradle")
-} else {
-    throw GradleException("Invalid firebase_cpp_sdk_dir property ,current cpp dir detected =>  $cppDir")
-}
-
 val localProps = Properties()
 val localPropsFile = rootProject.file("local.properties")
 if (localPropsFile.exists()) {
     localProps.load(FileInputStream(localPropsFile))
 } else {
     throw GradleException("local.properties not found, cannot read ARCFOUR keys")
+}
+
+// INCLUDING FIREBASE SDK CPP //
+val firebaseCppSdkDir = localProps.getProperty("firebase_cpp_sdk_dir")
+    ?: throw GradleException("firebase_cpp_sdk_dir property not found in local.properties")
+val cppDir = file(firebaseCppSdkDir)
+if (cppDir.exists() && cppDir.isDirectory) {
+    apply(from = "${cppDir.path}/Android/firebase_dependencies.gradle")
+} else {
+    throw GradleException("Invalid firebase_cpp_sdk_dir property ,current cpp dir detected =>  $cppDir")
 }
 
 android {
@@ -53,7 +55,7 @@ android {
             cmake{
                 // Pass the firebase cpp sdk dir to native side
                 arguments(
-                    "-DFIREBASE_CPP_SDK_DIR=${providers.gradleProperty("firebase_cpp_sdk_dir").get()}",
+                    "-DFIREBASE_CPP_SDK_DIR=$firebaseCppSdkDir",
 
                     // API & ARCFOUR //
                     "-DARCFOUR_SECRET_KEY=${localProps.getProperty("arcfour.secret.key")}",

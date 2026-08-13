@@ -40,18 +40,18 @@ These tests are intended to validate correct sensor handling and native C/C++ ca
 
 ## ⚙️ Gradle Configuration
 
-For correct setup, place your **google-services.json** under `app/` and link your **Firebase C++ SDK** in your `gradle.properties` (available in the release section):
+For correct setup, place your **google-services.json** under `app/` and link your **Firebase C++ SDK** in your `local.properties` (available in the release section):
 
 ```
 org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
 android.useAndroidX=true
 kotlin.code.style=official
 android.nonTransitiveRClass=true
-firebase_cpp_sdk_dir=C\:\firebase_cpp_sdk
 ```
 *local.properties :*
 ```
 sdk.dir=C\:\\Users\\...\\AppData\\Local\\Android\\Sdk
 arcfour.secret.key= ...
 regolo.encrypted.key= ...
+firebase_cpp_sdk_dir=C\:\firebase_cpp_sdk
 ```
