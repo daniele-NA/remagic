@@ -25,7 +25,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
-import androidx.core.graphics.scale
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.crescenzi.remagic.R
 import com.crescenzi.remagic.core.extension.getNavBarHeight
@@ -40,6 +39,28 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.sqrt
+
+private val MAGICIAN_RUN_RIGHT = listOf(
+    R.drawable.magician_run_right_0,
+    R.drawable.magician_run_right_1,
+    R.drawable.magician_run_right_2,
+    R.drawable.magician_run_right_3,
+    R.drawable.magician_run_right_4,
+    R.drawable.magician_run_right_5,
+    R.drawable.magician_run_right_6,
+    R.drawable.magician_run_right_7,
+)
+
+private val MAGICIAN_RUN_LEFT = listOf(
+    R.drawable.magician_run_left_0,
+    R.drawable.magician_run_left_1,
+    R.drawable.magician_run_left_2,
+    R.drawable.magician_run_left_3,
+    R.drawable.magician_run_left_4,
+    R.drawable.magician_run_left_5,
+    R.drawable.magician_run_left_6,
+    R.drawable.magician_run_left_7,
+)
 
 @Composable
 fun GameScreen(gameViewModel: GameViewModel, menuViewModel: MenuViewModel) {
@@ -59,29 +80,39 @@ fun GameScreen(gameViewModel: GameViewModel, menuViewModel: MenuViewModel) {
     }
     val navBarThickness = LocalActivity.current?.getNavBarHeight() ?: 0
 
-    // Memoizza le bitmap per evitare decode ripetuti ad ogni recomposition
-    val magicianLeftBmp = remember(resources) {
-        BitmapFactory.decodeResource(resources, R.raw.magician_left)
-            .scale(MAGICIAN_FRAME_SIDE, MAGICIAN_FRAME_SIDE)
+    val magicianIdleBmp = remember(resources) {
+        BitmapFactory.decodeResource(resources, R.drawable.magician_idle)
             .asImageBitmap()
     }
 
-    val magicianStandBmp = remember(resources) {
-        BitmapFactory.decodeResource(resources, R.raw.magician_stand)
-            .scale(MAGICIAN_FRAME_SIDE, MAGICIAN_FRAME_SIDE)
-            .asImageBitmap()
+    val magicianRunLeft = remember(resources) {
+        MAGICIAN_RUN_LEFT.map {
+            BitmapFactory.decodeResource(resources, it).asImageBitmap()
+        }
     }
 
-    val magicianRightBmp = remember(resources) {
-        BitmapFactory.decodeResource(resources, R.raw.magician_right)
-            .scale(MAGICIAN_FRAME_SIDE, MAGICIAN_FRAME_SIDE)
-            .asImageBitmap()
+    val magicianRunRight = remember(resources) {
+        MAGICIAN_RUN_RIGHT.map {
+            BitmapFactory.decodeResource(resources, it).asImageBitmap()
+        }
     }
 
-    val magicianBmp = remember(uiState.moveDirection) {
-        listOf(
-            magicianLeftBmp, magicianStandBmp, magicianRightBmp
-        )[uiState.moveDirection.ordinal]
+    var runFrame by remember { mutableIntStateOf(0) }
+    LaunchedEffect(uiState.moveDirection) {
+        if (uiState.moveDirection == MoveDirection.STAND) {
+            runFrame = 0
+            return@LaunchedEffect
+        }
+        while (true) {
+            delay(GameConstants.MAGICIAN_RUN_FRAME_MS)
+            runFrame++
+        }
+    }
+
+    val magicianBmp = when (uiState.moveDirection) {
+        MoveDirection.LEFT -> magicianRunLeft[runFrame % magicianRunLeft.size]
+        MoveDirection.RIGHT -> magicianRunRight[runFrame % magicianRunRight.size]
+        MoveDirection.STAND -> magicianIdleBmp
     }
 
 

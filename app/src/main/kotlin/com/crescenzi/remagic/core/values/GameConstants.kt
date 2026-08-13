@@ -15,6 +15,8 @@ object GameConstants {
     const val MAGICIAN_FRAME_SIDE = 240
     const val MAGICIAN_SPEED = 60f
 
+    const val MAGICIAN_RUN_FRAME_MS = 70L
+
     const val TARGET_SPAWN_RATE = 1500L
     const val TARGET_SPEED = 10f
 
